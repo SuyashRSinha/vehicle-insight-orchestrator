@@ -3,7 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import Navigation from "./components/Navigation";
+import Dashboard from "./pages/Dashboard";
+import PredictiveMaintenance from "./pages/PredictiveMaintenance";
+import CustomerEngagement from "./pages/CustomerEngagement";
+import Scheduling from "./pages/Scheduling";
+import Manufacturing from "./pages/Manufacturing";
+import Security from "./pages/Security";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -14,9 +20,14 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Navigation />
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/predictive" element={<PredictiveMaintenance />} />
+          <Route path="/engagement" element={<CustomerEngagement />} />
+          <Route path="/scheduling" element={<Scheduling />} />
+          <Route path="/manufacturing" element={<Manufacturing />} />
+          <Route path="/security" element={<Security />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
