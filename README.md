@@ -1,2 +1,1 @@
-# vehicle-insight-orchestrator
-Agentic AI - Vehicle Smart Maintanance System
+EY Techathon 6.0
